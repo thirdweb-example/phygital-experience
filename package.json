@@ -11,18 +11,22 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "@thirdweb-dev/engine": "^0.0.1",
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
+    "axios": "^1.6.0",
     "ethers": "^5",
-    "next": "^13",
+    "next": "^14",
     "react": "^18.2",
     "react-dom": "^18.2"
   },
   "devDependencies": {
-    "@types/node": "^18.11.11",
+    "@types/node": "^20.8.10",
     "@types/react": "^18",
     "eslint": "^8.29.0",
-    "eslint-config-next": "^13",
+    "eslint-config-next": "^14",
+    "prisma": "^5.5.2",
     "typescript": "^4.9.4"
   }
 }
