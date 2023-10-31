@@ -13,10 +13,20 @@ export default async function Home({
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Claim Page</h1>
-      <h2>{nft.name}</h2>
-      <p>{nft.description}</p>
       {nft.minted && <h1>NFT has already been claimed</h1>}
       <MediaRenderer src={nft.image} alt={nft.name} />
+      <h2>{nft.name}</h2>
+      <p>{nft.description}</p>
+
+      <h3>Attributes</h3>
+      {/* @ts-ignore */}
+      {Object.keys(nft.attributes).map((key) => (
+        <p key={key}>
+          {/* @ts-ignore */}
+          {key}: {nft.attributes[key]}
+        </p>
+      ))}
+
       <Button id={searchParams.id} />
     </div>
   );
