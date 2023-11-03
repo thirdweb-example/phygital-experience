@@ -2,7 +2,7 @@
 
 import { useState, type FC } from "react";
 import axios from "axios";
-import { useAddress } from "@thirdweb-dev/react";
+import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import styles from "@/styles/Home.module.css";
 
 const Button: FC<{ id: string }> = ({ id }) => {
@@ -19,7 +19,7 @@ const Button: FC<{ id: string }> = ({ id }) => {
 
       alert("NFT claimed!");
     } catch (err) {
-      alert("Error claiming NFT");
+      alert(`Error claiming NFT: ${err}`);
     } finally {
       setLoading(false);
     }
@@ -27,14 +27,16 @@ const Button: FC<{ id: string }> = ({ id }) => {
 
   return (
     <>
-      {address && (
+      {address ? (
         <button
           className={styles.claimButton}
           onClick={() => claim()}
           disabled={loading}
         >
-          {loading ? "Loading..." : "Claim"}
+          {loading ? "Claiming..." : "Claim"}
         </button>
+      ) : (
+        <ConnectWallet />
       )}
     </>
   );

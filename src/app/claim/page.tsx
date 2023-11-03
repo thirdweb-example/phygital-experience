@@ -17,7 +17,7 @@ async function getData(id: string) {
   return { nft: JSON.stringify(nft) };
 }
 
-export default async function Home({
+export default async function ClaimPage({
   searchParams,
 }: {
   searchParams: { id: string };
@@ -41,7 +41,7 @@ export default async function Home({
         </p>
       ))}
 
-      <Button id={searchParams.id} />
+      {!nft.minted && <Button id={searchParams.id} />}
     </div>
   );
 }

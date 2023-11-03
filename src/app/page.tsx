@@ -15,6 +15,7 @@ export default function Home() {
       <h1>Your inventory</h1>
       {!address && <h1>Connect your wallet</h1>}
       {address && isLoading && <h1>Loading...</h1>}
+      {address && !isLoading && !nfts?.length && <h1>You have no NFTs :(</h1>}
       <div className={styles.nfts}>
         {nfts?.map((nft) => (
           <NFTCard metadata={nft.metadata} key={nft.metadata.id} />

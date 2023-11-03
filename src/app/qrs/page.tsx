@@ -17,7 +17,7 @@ async function getData() {
   return { nfts: JSON.stringify(nfts) };
 }
 
-export default async function Home() {
+export default async function QrsPage() {
   const nfts = JSON.parse((await getData()).nfts);
 
   return (
