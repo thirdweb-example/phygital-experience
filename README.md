@@ -1,40 +1,34 @@
-## Getting Started
+# Phygital experience with thirdweb Engine
 
-Create a project using this example:
+This example demonstrates using thirdweb Engine to let users claim an NFT by scanning a QR code.
 
-```bash
-npx thirdweb create --template next-typescript-starter
-```
+1. Buyers scans a QR code they received with their physical product.
+2. Sign in with google/email on our website using embedded wallet.
+3. Click on the claim button which will call our backend API to mint the NFT.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The buyer receives the NFT without requiring wallet signatures or gas funds.
 
-On `pages/_app.tsx`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
+## Instructions
 
-## Environment Variables
+1. Create a `.env.local` file from the template:
+   ```bash
+   cp .env.example .env.local
+   ```
+2. Provide details of your project.
+   ```bash
+   DATABASE_URL=
+   NEXT_PUBLIC_TEMPLATE_CLIENT_ID=
+   ENGINE_URL=
+   THIRDWEB_ACCESS_TOKEN=
+   BACKEND_WALLET_ADDRESS=
+   NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=
+   ```
+3. Start the server with favorite package manager.
+   ```bash
+   bun dev
+   ```
 
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
+## Get in touch
 
-## Deploy to IPFS
-
-Deploy a copy of your application to IPFS using the following command:
-
-```bash
-yarn deploy
-```
-
-## Learn More
-
-To learn more about thirdweb and Next.js, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb TypeScript Documentation](https://docs.thirdweb.com/typescript) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com) - check our guides and development resources.
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Templates](https://thirdweb.com/templates)
-
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+- Support: [Join the Discord](https://discord.gg/thirdweb)
+- Twitter: [@thirdweb](https://twitter.com/thirdweb)

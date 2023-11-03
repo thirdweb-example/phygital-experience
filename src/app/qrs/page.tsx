@@ -24,7 +24,7 @@ export default async function QrsPage() {
     <div className={styles.container}>
       <h1 className={styles.title}>Unclaimed NFTs</h1>
       <div className={styles.grid}>
-        {nfts.map((nft: any) => (
+        {nfts.map((nft: { id: string }) => (
           <QR
             url={`https://engine-phygital.vercel.app/claim?id=${nft.id}`}
             key={nft.id}
