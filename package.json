@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.5.2",
-    "@thirdweb-dev/engine": "^0.0.1",
+    "@thirdweb-dev/engine": "^0",
     "@thirdweb-dev/react": "^4",
     "@thirdweb-dev/sdk": "^4",
     "axios": "^1.6.0",
