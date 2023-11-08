@@ -3,7 +3,7 @@
 import { useState, type FC } from "react";
 import axios from "axios";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Claim.module.css";
 
 const Button: FC<{ id: string }> = ({ id }) => {
   const address = useAddress();
@@ -36,7 +36,7 @@ const Button: FC<{ id: string }> = ({ id }) => {
           {loading ? "Claiming..." : "Claim"}
         </button>
       ) : (
-        <ConnectWallet />
+        <ConnectWallet className={styles.connectBtn} />
       )}
     </>
   );

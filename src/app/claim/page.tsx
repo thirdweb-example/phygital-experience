@@ -1,7 +1,7 @@
 import Button from "@/components/Button";
 import { MediaRenderer } from "@/components/MediaRenderer";
 import prisma from "@/prisma/prisma";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Claim.module.css";
 
 async function getData(id: string) {
   const nft = await prisma.nFT.findUnique({
@@ -26,20 +26,36 @@ export default async function ClaimPage({
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Claim Page</h1>
-      {nft.minted && <h1>NFT has already been claimed</h1>}
-      <MediaRenderer src={nft.image} alt={nft.name} />
-      <h2>{nft.name}</h2>
-      <p>{nft.description}</p>
-
-      <h3>Attributes</h3>
-      {/* @ts-ignore */}
-      {Object.keys(nft.attributes).map((key) => (
-        <p key={key}>
-          {/* @ts-ignore */}
-          {key}: {nft.attributes[key]}
-        </p>
-      ))}
+      {nft.minted ? (
+        <h1 className={styles.title}>NFT has already been claimed</h1>
+      ) : (
+        <h1 className={styles.title}>
+          You&apos;ve discovered a<br />
+          <span className={styles.blue}>&apos;{nft.name}&apos; NFT</span>.
+        </h1>
+      )}
+      <div className={styles.nft}>
+        <MediaRenderer
+          src={nft.image}
+          alt={nft.name}
+          width="250px"
+          height="250px"
+        />
+        <h2>{nft.name}</h2>
+        <p>{nft.description}</p>
+        {/* @ts-ignore */}
+        <div className={styles.attributes}>
+          {Object.keys(nft.attributes).map((key) => (
+            <div key={key} className={styles.attribute}>
+              <p className={styles.attributeKey}>{key}</p>
+              <p className={styles.attributeValue}>
+                {/* @ts-ignore */}
+                {nft.attributes[key]}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {!nft.minted && <Button id={searchParams.id} />}
     </div>
