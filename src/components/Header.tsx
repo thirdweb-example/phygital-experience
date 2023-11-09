@@ -5,10 +5,16 @@ import { ConnectWallet } from "@thirdweb-dev/react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Header.module.css";
+import { usePathname, useRouter } from "next/navigation";
 
 export const Header: FC = () => {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
-    <nav className={styles.header}>
+    <nav
+      className={`${pathname === "/qrs" ? styles.transparent : styles.header}`}
+    >
       <div style={{ width: "200px" }}>
         <Link href="/">
           <Image

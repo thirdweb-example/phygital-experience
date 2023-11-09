@@ -2,7 +2,7 @@
 
 This example demonstrates using thirdweb Engine to let users claim an NFT by scanning a QR code.
 
-1. Buyers scans a QR code they received with their physical product.
+1. Buyers scans a QR code they received with their physical product. For testing, you can use the QRs on the [QRs page](https://engine-phygital.vercel.app/qrs).
 2. Sign in with google/email on our website using embedded wallet.
 3. Click on the claim button which will call our backend API to mint the NFT.
 

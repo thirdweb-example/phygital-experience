@@ -1,4 +1,5 @@
-.header {
+.header,
+.transparent {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,6 +9,7 @@
   width: 100%;
   top: 0;
   background: #131417;
+  z-index: 1;
 }
 
 .link {
@@ -15,4 +17,9 @@
   color: #eaeaea;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.transparent {
+  background: transparent;
+  box-shadow: none;
 }

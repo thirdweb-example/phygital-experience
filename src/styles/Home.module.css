@@ -24,6 +24,9 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
+  z-index: 1;
+  position: relative;
+  color: white;
 }
 
 .container > h2 {
@@ -47,6 +50,8 @@
   grid-gap: 20px;
   width: 100%;
   margin-top: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .grid {
@@ -71,6 +76,20 @@
   margin: 0 auto;
   color: #646d7a;
   text-transform: uppercase;
+}
+
+.blur {
+  background: linear-gradient(
+    117.02deg,
+    rgba(242, 19, 164, 0.5) 3.71%,
+    rgba(37, 23, 199, 0.5) 41.19%,
+    rgba(250, 0, 255, 0.5) 80.56%
+  );
+  width: 100%;
+  height: 256px;
+  filter: blur(500px);
+  position: absolute;
+  top: -100px;
 }
 
 .loader,
@@ -140,5 +159,12 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .nfts,
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
