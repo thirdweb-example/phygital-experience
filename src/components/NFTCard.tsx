@@ -3,6 +3,7 @@
 import { NFT, ThirdwebNftMedia } from "@thirdweb-dev/react";
 import type { FC } from "react";
 import styles from "@/styles/Home.module.css";
+import Link from "next/link";
 
 interface NFTCardProps {
   metadata: NFT["metadata"];
@@ -10,10 +11,15 @@ interface NFTCardProps {
 
 export const NFTCard: FC<NFTCardProps> = ({ metadata }) => {
   return (
-    <div key={metadata.id} className={styles.nft}>
-      <ThirdwebNftMedia metadata={metadata} className={styles.nftImage} />
-      <h2>{metadata.name}</h2>
-      <p>{metadata.description}</p>
-    </div>
+    <Link
+      href={`https://thirdweb.com/goerli/${process.env.NEXT_PUBLIC_NFT_CONTRACT_ADDRESS}/nfts/0/${metadata.id}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div key={metadata.id} className={styles.nft}>
+        <ThirdwebNftMedia metadata={metadata} width="140px" height="140px" />
+        <h2>{metadata.name}</h2>
+      </div>
+    </Link>
   );
 };

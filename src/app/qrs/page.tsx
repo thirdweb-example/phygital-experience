@@ -22,6 +22,7 @@ export default async function QrsPage() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.blur} />
       <h1 className={styles.title}>Unclaimed NFTs</h1>
       <div className={styles.grid}>
         {nfts.map((nft: { id: string }) => (
