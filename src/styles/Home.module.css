@@ -20,6 +20,13 @@
   font-size: 2rem;
 }
 
+.desc {
+  color: #646d7a;
+  z-index: 1;
+  position: relative;
+  font-size: 1rem;
+}
+
 .title {
   font-size: 2rem;
   font-weight: 700;
