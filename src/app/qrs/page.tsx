@@ -24,7 +24,7 @@ export default async function QrsPage() {
     <div className={styles.container}>
       <div className={styles.blur} />
       <h1 className={styles.title}>Claim an NFT</h1>
-      <p className={styles.desc}>Scan this QR Code to claim an NFT</p>
+      <p className={styles.desc}>Scan any QR Code to claim an NFT</p>
       <div className={styles.grid}>
         {nfts.map((nft: { id: string }) => (
           <QR
