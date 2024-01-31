@@ -2,6 +2,8 @@ import { QR } from "@/components/QR";
 import prisma from "@/prisma/prisma";
 import styles from "@/styles/Home.module.css";
 
+export const revalidate = 3600;
+
 async function getData() {
   const nfts = await prisma.nFT.findMany({
     where: {
